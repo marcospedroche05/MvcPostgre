@@ -1,0 +1,15 @@
+﻿@model List<Departamento>
+
+<h1>Departamentos</h1>
+
+<a asp-controller="Departamentos" asp-action="Create">Crear departamento</a>
+
+@if(Model != null)
+{
+    <ul class="list-group">
+        @foreach(Departamento dept in Model)
+        {
+            <li class="list-group-item">@dept.IdDepartamento | @dept.Nombre | @dept.Localidad | <a asp-controller="Departamentos" asp-action="Details" asp-route-id="@dept.IdDepartamento">Detalles</a></li>   
+        }
+    </ul>
+}
